@@ -41,7 +41,9 @@ Without options
 bc. <div id="shake-me-default">Click Me</div>
 
 bc. $(document).ready(function() {
-	$('#shake-me-default').shake();
+	$('#shake-me-default').on("click", function() {
+		$(this).shake();
+	});
 });
 
 With options
@@ -49,8 +51,10 @@ With options
 bc. <div id="shake-me-option">Click Me</div>
 
 bc. $(document).ready(function() {
-	$('#shake-me-option').shake({
-		direction: "up",
-		distance: 50
+	$('#shake-me-option').on("click", function() {
+		$(this).shake({
+			direction: "up",
+			distance: 50
+		});
 	});
 });
