@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>jQuery Shake</title>
+		
+		<style>
+			body { text-align: center; }
+			
+			#shake-me-default,
+			#shake-me-option {
+				margin: 5em auto;
+				padding: 1em;
+				width: 200px;
+				background: #3A332F;
+				color: #ECEAE0;
+				font-weight: bold;
+			}
+			
+			#shake-me-option { background: #D8422B; color: #ECEAE0; }
+		</style>
+	</head>
+	<body>
+		<div id="shake-me-default">Click Me</div>
+		<div id="shake-me-option">Click Me<br>w/ options</div>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		<script src="jquery.ui.shake.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('#shake-me-default').on("click", function() {
+					$(this).shake();
+				});
+				
+				$('#shake-me-option').on("click", function() {
+					$(this).shake({
+						direction: "up",
+						distance: 50,
+						times: 5,
+						speed: 100
+					});
+				});
+			});
+		</script>
+	</body>
+</html>

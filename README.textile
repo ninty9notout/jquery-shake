@@ -1,0 +1,56 @@
+h1. jQuery Shake
+
+The shake effect from jQuery UI extracted to be used as a standalone plugin.
+
+I needed to use the shake effect for a login page for a project inspired by the WordPress admin login page but I thought it silly to include the entirety of jQuery UI just for one effect, thus, I decided to extract the effect and have it work completely independent from jQuery UI.
+
+Vanilla jQuery is required for this to work, along with the easing plugin if you want to use the easing functions.
+
+From the jQuery UI docs:
+
+h2. Description
+
+Shakes the element multiple times, vertically or horizontally
+
+h2. Options
+
+*direction* (default: "left")
+Type: String
+A value of "left" or "right" will shake the element horizontally, and a value of "up" or "down" will shake the element vertically. The value specifies which direction the element should move along the axis for the first step of the effect.
+
+*distance* (default: 20)
+Type: Number
+Distance to shake.
+
+*times* (default: 3)
+Type: Number
+Times to shake.
+
+*speed* (default: 140)
+Type: Number
+Animation duration.
+
+*easing* (default: "easeInOutSine")
+Type: String
+The easing function to use.
+
+h2. Usage
+
+Without options
+
+bc. <div id="shake-me-default">Click Me</div>
+
+bc. $(document).ready(function() {
+	$('#shake-me-default').shake();
+});
+
+With options
+
+bc. <div id="shake-me-option">Click Me</div>
+
+bc. $(document).ready(function() {
+	$('#shake-me-option').shake({
+		direction: "up",
+		distance: 50
+	});
+});
