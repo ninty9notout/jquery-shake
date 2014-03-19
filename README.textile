@@ -34,7 +34,7 @@ Animation duration.
 Type: String
 The easing function to use.
 
-*callback" (default: none)
+*callback* (default: none)
 Type: function
 The callback function to use after animation end.
 
