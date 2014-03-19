@@ -34,6 +34,10 @@ Animation duration.
 Type: String
 The easing function to use.
 
+*callback" (default: none)
+Type: function
+The callback function to use after animation end.
+
 h2. Usage
 
 Without options
@@ -55,6 +59,18 @@ bc. $(document).ready(function() {
 		$(this).shake({
 			direction: "up",
 			distance: 50
+		});
+	});
+});
+
+With callback
+
+bc. <div id="shake-me-callback">Click Me</div>
+
+bc. $(document).ready(function() {
+	$('#shake-me-callback').on("click", function () {
+		$(this).shake(function () {
+			alert('callback');
 		});
 	});
 });
