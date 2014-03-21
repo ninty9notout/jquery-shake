@@ -1,5 +1,7 @@
 (function($) {
 	$.fn.shake = function(o) {
+		if (typeof o === 'function')
+			o = {callback: o};
 		// Set options
 		var o = $.extend({
 			direction: "left",
@@ -8,7 +10,7 @@
 			speed: 140,
 			easing: "swing"
 		}, o);
-		
+
 		return this.each(function() {
 
 			// Create element
@@ -21,7 +23,7 @@
 			};
 
 			el.css("position", "relative");
-			
+
 			// Adjust
 			var ref = (o.direction == "up" || o.direction == "down") ? "top" : "left";
 			var motion = (o.direction == "up" || o.direction == "left") ? "pos" : "neg";
